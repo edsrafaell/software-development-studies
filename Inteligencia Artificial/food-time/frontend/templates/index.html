@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🍽️ Previsão de Tempo de Preparo</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="header-tag">
+            🍽️ Restaurante · Regressão Linear Múltipla
+        </div>
+
+        <h1>
+            Previsão de <span>Tempo de Preparo</span>
+        </h1>
+
+        <p>
+            Insira os dados do pedido e compare os dois métodos
+        </p>
+    </div>
+
+    <div class="cards-row">
+
+        <!-- CARD 1 -->
+        <div class="card">
+
+            <div class="card-icon">🧮</div>
+
+            <div class="method-badge badge-manual">
+                ▸ β = (XᵀX)⁻¹ Xᵀy — Manual
+            </div>
+
+            <h2>Regressão Múltipla Manual</h2>
+
+            <p>
+                Coeficientes calculados manualmente via fórmula matricial
+            </p>
+
+            <div id="statusModelo"></div>
+
+            <div class="field">
+                <label>Quantidade de itens</label>
+
+                <input
+                    type="number"
+                    id="itens"
+                    min="1"
+                    max="30"
+                    placeholder="ex: 5"
+                    value="1"
+                >
+            </div>
+
+            <div class="field">
+                <label>Tipo do pedido</label>
+
+                <select id="tipo">
+                    <option value="">Selecione...</option>
+                    <option value="1">Simples</option>
+                    <option value="2">Médio</option>
+                    <option value="3">Complexo</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Nº de cozinheiros</label>
+
+                <input
+                    type="number"
+                    id="cozinheiros"
+                    min="1"
+                    max="8"
+                    placeholder="ex: 2"
+                    value="2"
+                >
+            </div>
+
+            <div class="field">
+                <label>Horário</label>
+
+                <select id="horario">
+                    <option value="">Selecione...</option>
+                    <option value="1">Vazio</option>
+                    <option value="2">Normal</option>
+                    <option value="3">Pico</option>
+                </select>
+            </div>
+
+            <button class="btn-manual" onclick="calcular()">
+                Calcular tempo estimado
+            </button>
+
+            <div class="result-box" id="resultado">
+                <span class="placeholder">
+                    Aguardando dados...
+                </span>
+            </div>
+
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="card">
+
+            <div class="card-icon">📦</div>
+
+            <div class="method-badge badge-lstsq">
+                ▸ np.linalg.lstsq
+            </div>
+
+            <h2>Comparação com Biblioteca</h2>
+
+            <p>
+                Digite os mesmos valores e compare o resultado
+            </p>
+
+            <div class="field">
+                <label>Quantidade de itens</label>
+
+                <input
+                    type="number"
+                    id="c_itens"
+                    min="1"
+                    max="30"
+                    placeholder="ex: 5"
+                >
+            </div>
+
+            <div class="field">
+                <label>Tipo do pedido</label>
+
+                <select id="c_tipo">
+                    <option value="">Selecione...</option>
+                    <option value="1">Simples</option>
+                    <option value="2">Médio</option>
+                    <option value="3">Complexo</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Nº de cozinheiros</label>
+
+                <input
+                    type="number"
+                    id="c_cozinheiros"
+                    min="1"
+                    max="8"
+                    placeholder="ex: 2"
+                >
+            </div>
+
+            <div class="field">
+                <label>Horário</label>
+
+                <select id="c_horario">
+                    <option value="">Selecione...</option>
+                    <option value="1">Vazio</option>
+                    <option value="2">Normal</option>
+                    <option value="3">Pico</option>
+                </select>
+            </div>
+
+            <button class="btn-lstsq" onclick="calcularLstsq()">
+                Calcular com lstsq
+            </button>
+
+            <div class="result-box" id="resultadoLstsq">
+                <span class="placeholder">
+                    Aguardando dados...
+                </span>
+            </div>
+
+            <div class="residual-box" id="residualBox"></div>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="../static/js/script.js"></script>
+
+</body>
+</html>
