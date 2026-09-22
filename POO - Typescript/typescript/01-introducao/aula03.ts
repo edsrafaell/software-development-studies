@@ -2,6 +2,7 @@ let valor : any;
 valor = 10;
 valor = "Rafael";
 valor = true;
+
 //Evite ultilizar ANY
 
 let valores : unknown;
