@@ -13,5 +13,5 @@ const people : readonly [string, number] = [
 ]
 console.log(people[0]);
 console.log(people[1]);
-people[0] = "joao"; //não permitido
+// people[0] = "joao"; //não permitido
 console.log(people[0]);
