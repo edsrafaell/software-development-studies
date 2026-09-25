@@ -1,0 +1,27 @@
+/**
+ * 2. Modelagem de Objetos Básicos
+    Imagine que você deve criar um modelo conceitual em texto livre para representar
+    uma lâmpada que está à venda em um supermercado. Defina quais características
+    (atributos) e comportamentos (métodos) ela deve possuir. Em seguida, estenda
+    esse modelo para criar um LampadaTresEstados que suporte os estados: apagada,
+    acesa e meia-luz.
+
+
+class Diagrama
+    class Lampada{
+        -String tipo;
+        -Number potencia;
+        -String cor;
+        -Number preco;
+        + ConsultarPreco();
+        + AlterarPreco();
+        + ConsultarEstoque();
+        + ReporEstoque();
+}
+    class LamapdaTresEstados{
+        -String estado;
+        +Ligar()
+        +Desligar()
+        +MeiaLuz()
+    }
+ */
