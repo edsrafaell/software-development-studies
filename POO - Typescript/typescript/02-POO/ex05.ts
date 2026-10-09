@@ -3,30 +3,30 @@ let teclado = PromptSync();
 
 class Pessoa {
     constructor(
-        private nome : string,
-        private idade : number,
-    ){}
+        private _nome: string,
+        private _idade: number
+    ) {}
 
-    get _nome(){
-        return this.nome;
+    public get nome(): string {
+        return this._nome;
     }
 
-    set _nome(nome : string){
-        nome = this._nome;
+    public set nome(value: string) {
+        this._nome = value;
     }
 
-    get _idade(){
-        return this.idade;
+    public get idade(): number {
+        return this._idade;
     }
 
-    set _idade(idade : number){
-        idade = this._idade;
+    public set idade(value: number) {
+        this._idade = value;
     }
 
-    apresentar(){
-        console.log('Nome: ', this.nome);
-        console.log('Idade: ', this.idade);
-        
+    apresentar() {
+        console.log(
+            `Olá, meu nome é ${this._nome} e tenho ${this._idade} anos.`
+        );
     }
 }
 
@@ -39,3 +39,4 @@ let nome2 = teclado("Digite seu nome: ");
 let idade2= Number(teclado("Digite sua idade: "));
 let Pessoa2 = new Pessoa(nome2, idade2);
 Pessoa2.apresentar();
+
