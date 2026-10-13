@@ -17,5 +17,5 @@ int fatorial(int x){
     } else {
         resultado = x * fatorial (x - 1);
     }
-    return resultado;  
+    return resultado;
 }
