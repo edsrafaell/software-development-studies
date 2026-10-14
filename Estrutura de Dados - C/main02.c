@@ -9,7 +9,7 @@ int main(void) {
 }
 
 int adicao(int x){
-    if (x <= 0){
+    if (x <= 0){ 
         printf("0\n");
     } else {
         return x + adicao(x-1);
