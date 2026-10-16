@@ -1,26 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void) {
     int a = 10;
-
-    printf("&a = %p, a = %d\n", (void *)&a, a);
-
     int *p1 = NULL;
-    printf("p1 antes: %p\n", (void *)p1);
-
     int *p2;
-    // p2 ainda não foi inicializado: não devemos utilizá-lo aqui.
 
+    printf("&a = %p, a = %d\n", &a, a);
+    printf("&p1 = %p, p1 = %p\n", &p1, p1);
+    printf("&p2 = %p, p2 = %p\n\n", &p2, p2);
+    
     p1 = &a;
-    printf("p1 depois: %p\n", (void *)p1);
-
     p2 = p1;
-    printf("p2: %p\n", (void *)p2);
-
     *p2 = 4;
 
-    printf("*p2 = %d\n", *p2);
-    printf("a = %d\n", a);
-
+    printf("&a = %p, a = %d\n", &a, a);
+    printf("&p1 = %p, p1 = %p, *p1 = %d\n", &p1, p1, *p1);
+    printf("&p2 = %p, p2 = %p\n", &p2, p2);
+    
     return 0;
-}
+}  
