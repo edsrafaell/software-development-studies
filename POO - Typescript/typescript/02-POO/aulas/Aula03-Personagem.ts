@@ -48,11 +48,6 @@ export default class Personagem03 {
     }
 
     isAlive(): boolean {
-        if (this.energia < 0) {
-            console.log("Ops! Voce morreu!");
-            return true;
-        } else {
-            return false;
-        }
+        return this.energia < 0;
     }
 }
