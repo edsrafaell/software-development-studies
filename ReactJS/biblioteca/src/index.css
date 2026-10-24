@@ -109,3 +109,46 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 24px;
+}
+
+main > h2 {
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+.cartao-livro {
+    display: inline-block;
+    vertical-align: top;
+    width: 280px;
+    margin: 0 16px 16px 0;
+    padding: 24px;
+    background-color: #ffffff;
+    border: 1px solid #e3e8e1;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgb(0 0 0 / 5%);
+}
+
+.cartao-livro h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #173d2b;
+}
+
+.cartao-livro p {
+    color: #626b63;
+}
+
+.cartao-livro span {
+    display: inline-block;
+    padding: 6px 10px;
+    background-color: #e3f0e5;
+    color: #245d3b;
+    border-radius: 20px;
+    font-size: 12px;
+}

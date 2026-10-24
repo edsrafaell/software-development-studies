@@ -1,8 +1,28 @@
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: arial, sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #f5f6f2;
+    color: #202820;
 }
+
+header {
+    padding: 32px;
+    background-color: #173d2b;
+    color: white;
+}
+
+header h1 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+header p {
+    margin: 0;
+    color: #d6e5d9;
+}
+
