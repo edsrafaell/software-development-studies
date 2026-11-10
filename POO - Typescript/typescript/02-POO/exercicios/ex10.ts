@@ -1,27 +1,27 @@
 abstract class Animal {
-  constructor(protected nome: string) {}
+    constructor(protected nome: string) { }
 
-  abstract falar(): string;
+    abstract falar(): string;
 }
 
 class Cachorro extends Animal {
-  constructor(nome: string) {
-    super(nome);
-  }
+    constructor(nome: string) {
+        super(nome);
+    }
 
-  public override falar(): string {
-    return "AU AU";
-  }
+    public override falar(): string {
+        return "AU AU";
+    }
 }
 
 class Gato extends Animal {
-  constructor(nome: string) {
-    super(nome);
-  }
+    constructor(nome: string) {
+        super(nome);
+    }
 
-  public override falar(): string {
-    return "MIAU";
-  }
+    public override falar(): string {
+        return "MIAU";
+    }
 }
 
 const Cachorro1 = new Cachorro("Fael");
